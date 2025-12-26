@@ -1,50 +1,108 @@
-# Welcome to your Expo app 👋
+﻿# Aura Mobile - React Native Personal Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native mobile application built with Expo for managing tasks, notes, and personal productivity.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Dashboard**: Quick overview with task stats and recent activity
+- **Tasks**: Create, manage, and track tasks with priority levels
+- **Notes**: Organize notes in a card-based layout
+- **Profile**: User profile management and app settings
+- **Cross-Platform**: Runs on iOS, Android, and Web
 
-   ```bash
-   npm install
-   ```
+## Project Structure
 
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+app/
+├── (tabs)/          # Tab navigation screens
+│   ├── _layout.tsx  # Tab navigator configuration
+│   ├── index.tsx    # Dashboard screen
+│   ├── tasks.tsx    # Tasks management screen
+│   ├── notes.tsx    # Notes screen
+│   └── profile.tsx  # User profile screen
+├── index.tsx        # Root layout
+└── ...
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting Started
 
-## Learn more
+### Prerequisites
+- Node.js (v20.14.0 or higher)
+- npm or yarn
+- Expo CLI (optional, but recommended)
 
-To learn more about developing your project with Expo, look at the following resources:
+### Installation
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Install dependencies:
+```bash
+npm install
+```
 
-## Join the community
+2. Start the development server:
+```bash
+npm start
+```
 
-Join our community of developers creating universal apps.
+3. Run on your platform:
+- **iOS**: Press `i` (requires macOS)
+- **Android**: Press `a` (requires Android SDK)
+- **Web**: Press `w`
+- **Expo Go**: Scan QR code with Expo Go app
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Available Scripts
+
+- `npm start` - Start Expo development server
+- `npm run android` - Run on Android emulator/device
+- `npm run ios` - Run on iOS simulator/device (macOS only)
+- `npm run web` - Run in web browser
+
+## Technology Stack
+
+- **React Native** - Mobile framework
+- **Expo** - Development platform
+- **Expo Router** - File-based routing
+- **React Navigation** - Navigation library
+- **Material Icons** - Icon library
+- **TypeScript** - Type safety
+
+## Converting from Web to React Native
+
+This project was converted from a React web app to React Native. Key differences:
+
+- No DOM elements - use React Native components
+- No CSS - use StyleSheet for styles
+- Different navigation patterns (Tabs instead of browser routes)
+- Native platform APIs accessed through Expo modules
+
+## Customization
+
+### Adding New Screens
+1. Create a new `.tsx` file in `app/(tabs)/`
+2. Add it to the Tabs navigator in `app/(tabs)/_layout.tsx`
+
+### Styling
+All screens use `StyleSheet.create()` for styles. The color scheme uses purple (`#8b5cf6`) as the primary color.
+
+### State Management
+Currently using React's built-in `useState`. For larger apps, consider:
+- Redux
+- Context API with useReducer
+- Zustand
+- MobX
+
+## Future Enhancements
+
+- Backend integration for data persistence
+- User authentication
+- Push notifications
+- Sync across devices
+- Dark mode support
+- Advanced task scheduling
+
+## License
+
+MIT
+
+## Support
+
+For issues or questions, create an issue in the repository.
